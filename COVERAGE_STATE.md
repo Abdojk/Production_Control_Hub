@@ -1,7 +1,7 @@
 # COVERAGE_STATE.md — Numerator source for coverage maths
 
 > **Version lock:** D365 SCM 10.0.47 (build 10.0.2527)
-> **Map version tracked:** KNOWLEDGE_MAP.md v0.2
+> **Map version tracked:** KNOWLEDGE_MAP.md v0.3
 > **Last updated:** 2026-05-31
 > Every percentage in a `How_much_do_You_know?` readout must trace to the counts below. No estimates.
 >
@@ -16,26 +16,27 @@
 - All 35 forms flagged `skeleton-partial` — denominator is provisional and expected to grow during enrichment.
 
 ## Mission 2 — verified-knowledge (the "80%" target metric)
-- Verified: **0 / 190 = 0.0%**
+- Verified: **49 / 190 = 25.8%**
 - Unconfirmed: **0 / 190 = 0.0%**
-- Unknown: **190 / 190 = 100.0%**
+- Unknown: **141 / 190 = 74.2%**
+- On a /100 scale: **X = 25.8 / 100** (49 controls verified).
 
 ## Per-group tally
 
 | Group | Total controls | Verified | Unconfirmed | Unknown | Level-4? |
 |---|---|---|---|---|---|
-| 1. Setup | 123 | 0 | 0 | 123 | Yes |
+| 1. Setup | 123 | 49 | 0 | 74 | Yes |
 | 2. Common / Daily | 31 | 0 | 0 | 31 | Yes |
 | 3. Journals | 16 | 0 | 0 | 16 | Yes |
 | 4. Inquiries and reports | 4 | 0 | 0 | 4 | Yes (provisional) |
 | 5. Periodic tasks | 16 | 0 | 0 | 16 | Yes |
-| **Total** | **190** | **0** | **0** | **190** | |
+| **Total** | **190** | **49** | **0** | **141** | |
 
 ## Setup group — per-form tally (denominator = 123)
 
 | Form code | Form | Controls | Unknown |
 |---|---|---|---|
-| PARAMS | Production control parameters | 50 | 50 |
+| PARAMS | Production control parameters | 50 | 1 (49 VERIFIED) |
 | PARAMSITE | Production control parameters by site | 15 | 15 |
 | JOURNALNAMES | Production journal names | 10 | 10 |
 | POOLS | Production pools | 2 | 2 |
@@ -72,5 +73,5 @@
 All 35 enumerated forms. Highest-value skeleton-completion candidates: PARAMS, PARAMSITE (Documents / Number sequences / full Status matrix tabs not yet enumerated); PORD (full Action Pane).
 
 ## Resume pointer
-- **Mission 1 (skeleton):** all 5 groups now at Level 4 (`skeleton-partial`). Remaining Mission 1 work = deepening partial forms (enumerating undocumented fields), which generally requires sandbox/AOT inspection beyond public docs.
-- **Mission 2 (enrichment):** NOT STARTED. To move the verified-knowledge % toward 80%, enrichment must begin. Next control: `PC-SETUP-PARAMS-004` (Ledger posting).
+- **Mission 1 (skeleton):** all 5 groups at Level 4 (`skeleton-partial`).
+- **Mission 2 (enrichment):** IN PROGRESS. PARAMS form done (49/50 VERIFIED; PARAMS-048 lean defaults left UNKNOWN). **Next batch:** `JOURNALNAMES` (10) + `ROUTES-RG` (7) + `MES-DEFAULTS` (6) + `MES-PFE` (6) — all have Tier-1 material already fetched this session.

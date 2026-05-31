@@ -1,8 +1,9 @@
 # KNOWLEDGE_MAP.md — D365 F&O Production Control Knowledge Map (Skeleton)
 
 > **Version lock:** Dynamics 365 Supply Chain Management **10.0.47** (build **10.0.2527**) — GA self-update March 2026 (latest GA as of 2026-05-31). 10.0.48 (build 10.0.2645) is not GA until June 2026.
-> **Map version:** v0.2
+> **Map version:** v0.3
 > **Last updated:** 2026-05-31
+> **Mission 2 progress:** PARAMS form enriched — 49/50 controls VERIFIED. Verified-knowledge = 49/190 = 25.8%.
 > **Purpose:** This map is the *denominator* for all coverage maths. Levels 1–4 below. Every Level-4 control has a unique ID and a status. **All five groups are now enumerated to Level 4** (Setup `skeleton-partial`; Groups 2–5 operational/inquiry forms are `skeleton-partial` and partial by nature — Microsoft does not list every Action Pane button). Skeleton completeness is tracked in COVERAGE_STATE.md and is distinct from the verified-knowledge % (which is a Mission 2 measure and remains 0%).
 
 ## Status legend
@@ -39,71 +40,71 @@ Form code: `PARAMS`. Path: Production control > Setup > Production control param
 ### General tab
 | ID | Control | Status |
 |---|---|---|
-| PC-SETUP-PARAMS-001 | Parameter usage (By company / By site) | UNKNOWN |
-| PC-SETUP-PARAMS-002 | Profit setting | UNKNOWN |
-| PC-SETUP-PARAMS-003 | Reservation (Manual / Estimation / Scheduling / Start) | UNKNOWN |
-| PC-SETUP-PARAMS-004 | Ledger posting (Item and resource / Item and category / Production groups) | UNKNOWN |
-| PC-SETUP-PARAMS-005 | Maximum job lead time | UNKNOWN |
-| PC-SETUP-PARAMS-006 | Route network | UNKNOWN |
-| PC-SETUP-PARAMS-007 | Mandatory date | UNKNOWN |
-| PC-SETUP-PARAMS-008 | Block removal of approval | UNKNOWN |
-| PC-SETUP-PARAMS-009 | Block editing | UNKNOWN |
-| PC-SETUP-PARAMS-010 | Post picking list in ledger | UNKNOWN |
-| PC-SETUP-PARAMS-011 | Post report as finished in ledger | UNKNOWN |
-| PC-SETUP-PARAMS-012 | Post excl. transaction type | UNKNOWN |
-| PC-SETUP-PARAMS-013 | Planned order (capacity reservation) | UNKNOWN |
-| PC-SETUP-PARAMS-014 | Project (capacity reservation) | UNKNOWN |
-| PC-SETUP-PARAMS-015 | Limited work center search | UNKNOWN |
-| PC-SETUP-PARAMS-016 | Price calculation | UNKNOWN |
-| PC-SETUP-PARAMS-017 | Delete capacity reservations | UNKNOWN |
-| PC-SETUP-PARAMS-018 | Use estimated cost price | UNKNOWN |
-| PC-SETUP-PARAMS-049 | Default measuring device (dispensing) | UNKNOWN |
+| PC-SETUP-PARAMS-001 | Parameter usage (By company / By site) | VERIFIED |
+| PC-SETUP-PARAMS-002 | Profit setting | VERIFIED |
+| PC-SETUP-PARAMS-003 | Reservation (Manual / Estimation / Scheduling / Start) | VERIFIED |
+| PC-SETUP-PARAMS-004 | Ledger posting (Item and resource / Item and category / Production groups) | VERIFIED |
+| PC-SETUP-PARAMS-005 | Maximum job lead time | VERIFIED |
+| PC-SETUP-PARAMS-006 | Route network | VERIFIED |
+| PC-SETUP-PARAMS-007 | Mandatory date | VERIFIED |
+| PC-SETUP-PARAMS-008 | Block removal of approval | VERIFIED |
+| PC-SETUP-PARAMS-009 | Block editing | VERIFIED |
+| PC-SETUP-PARAMS-010 | Post picking list in ledger | VERIFIED |
+| PC-SETUP-PARAMS-011 | Post report as finished in ledger | VERIFIED |
+| PC-SETUP-PARAMS-012 | Post excl. transaction type | VERIFIED |
+| PC-SETUP-PARAMS-013 | Planned order (capacity reservation) | VERIFIED |
+| PC-SETUP-PARAMS-014 | Project (capacity reservation) | VERIFIED |
+| PC-SETUP-PARAMS-015 | Limited work center search | VERIFIED |
+| PC-SETUP-PARAMS-016 | Price calculation | VERIFIED |
+| PC-SETUP-PARAMS-017 | Delete capacity reservations | VERIFIED |
+| PC-SETUP-PARAMS-018 | Use estimated cost price | VERIFIED |
+| PC-SETUP-PARAMS-049 | Default measuring device (dispensing) | VERIFIED |
 
 ### Journals tab
 | ID | Control | Status |
 |---|---|---|
-| PC-SETUP-PARAMS-019 | Default journal — Picking list | UNKNOWN |
-| PC-SETUP-PARAMS-020 | Default journal — Route card | UNKNOWN |
-| PC-SETUP-PARAMS-021 | Default journal — Job card | UNKNOWN |
-| PC-SETUP-PARAMS-022 | Default journal — Report as finished | UNKNOWN |
-| PC-SETUP-PARAMS-050 | Default journal — Dispensing tickets | UNKNOWN |
-| PC-SETUP-PARAMS-023 | Pick negative | UNKNOWN |
-| PC-SETUP-PARAMS-024 | Physical reduction | UNKNOWN |
-| PC-SETUP-PARAMS-025 | Inv. managed planned order qty | UNKNOWN |
-| PC-SETUP-PARAMS-026 | Accept error | UNKNOWN |
-| PC-SETUP-PARAMS-027 | Automatic BOM consumption (journals) | UNKNOWN |
-| PC-SETUP-PARAMS-028 | Mandatory cost category for quantity | UNKNOWN |
-| PC-SETUP-PARAMS-029 | Mandatory cost category for hours | UNKNOWN |
-| PC-SETUP-PARAMS-030 | Automatic report as finished | UNKNOWN |
-| PC-SETUP-PARAMS-031 | Update capacity plan | UNKNOWN |
+| PC-SETUP-PARAMS-019 | Default journal — Picking list | VERIFIED |
+| PC-SETUP-PARAMS-020 | Default journal — Route card | VERIFIED |
+| PC-SETUP-PARAMS-021 | Default journal — Job card | VERIFIED |
+| PC-SETUP-PARAMS-022 | Default journal — Report as finished | VERIFIED |
+| PC-SETUP-PARAMS-050 | Default journal — Dispensing tickets | VERIFIED |
+| PC-SETUP-PARAMS-023 | Pick negative | VERIFIED |
+| PC-SETUP-PARAMS-024 | Physical reduction | VERIFIED |
+| PC-SETUP-PARAMS-025 | Inv. managed planned order qty | VERIFIED |
+| PC-SETUP-PARAMS-026 | Accept error | VERIFIED |
+| PC-SETUP-PARAMS-027 | Automatic BOM consumption (journals) | VERIFIED |
+| PC-SETUP-PARAMS-028 | Mandatory cost category for quantity | VERIFIED |
+| PC-SETUP-PARAMS-029 | Mandatory cost category for hours | VERIFIED |
+| PC-SETUP-PARAMS-030 | Automatic report as finished | VERIFIED |
+| PC-SETUP-PARAMS-031 | Update capacity plan | VERIFIED |
 
 ### Automatic update tab
 | ID | Control | Status |
 |---|---|---|
-| PC-SETUP-PARAMS-032 | Scheduling method (Operations scheduling / Job scheduling) | UNKNOWN |
-| PC-SETUP-PARAMS-033 | Automatic BOM consumption (Flushing principle / Always / Never) | UNKNOWN |
-| PC-SETUP-PARAMS-034 | Automatic route consumption | UNKNOWN |
-| PC-SETUP-PARAMS-035 | Group by vendor | UNKNOWN |
-| PC-SETUP-PARAMS-036 | Group by purchase agreement | UNKNOWN |
-| PC-SETUP-PARAMS-037 | Find purchase agreements | UNKNOWN |
+| PC-SETUP-PARAMS-032 | Scheduling method (Operations scheduling / Job scheduling) | VERIFIED |
+| PC-SETUP-PARAMS-033 | Automatic BOM consumption (Flushing principle / Always / Never) | VERIFIED |
+| PC-SETUP-PARAMS-034 | Automatic route consumption | VERIFIED |
+| PC-SETUP-PARAMS-035 | Group by vendor | VERIFIED |
+| PC-SETUP-PARAMS-036 | Group by purchase agreement | VERIFIED |
+| PC-SETUP-PARAMS-037 | Find purchase agreements | VERIFIED |
 
 ### Standard update tab
 | ID | Control | Status |
 |---|---|---|
-| PC-SETUP-PARAMS-038 | Scrap method | UNKNOWN |
-| PC-SETUP-PARAMS-039 | Scrap account | UNKNOWN |
-| PC-SETUP-PARAMS-040 | Finite capacity | UNKNOWN |
-| PC-SETUP-PARAMS-041 | Finite material | UNKNOWN |
-| PC-SETUP-PARAMS-042 | Finite property | UNKNOWN |
-| PC-SETUP-PARAMS-043 | Enable dispensing for production | UNKNOWN |
-| PC-SETUP-PARAMS-044 | Allow over-dispensing with reverse pick | UNKNOWN |
+| PC-SETUP-PARAMS-038 | Scrap method | VERIFIED |
+| PC-SETUP-PARAMS-039 | Scrap account | VERIFIED |
+| PC-SETUP-PARAMS-040 | Finite capacity | VERIFIED |
+| PC-SETUP-PARAMS-041 | Finite material | VERIFIED |
+| PC-SETUP-PARAMS-042 | Finite property | VERIFIED |
+| PC-SETUP-PARAMS-043 | Enable dispensing for production | VERIFIED |
+| PC-SETUP-PARAMS-044 | Allow over-dispensing with reverse pick | VERIFIED |
 
 ### Status / Inventory dimensions / Unit of measure / Lean manufacturing tabs
 | ID | Control | Status |
 |---|---|---|
-| PC-SETUP-PARAMS-045 | Status update matrix (per-status allowed-update checkboxes) | UNKNOWN |
-| PC-SETUP-PARAMS-046 | Inventory dimensions display selection | UNKNOWN |
-| PC-SETUP-PARAMS-047 | Lean time units (Days/Hours/Minutes/Seconds) | UNKNOWN |
+| PC-SETUP-PARAMS-045 | Status update matrix (per-status allowed-update checkboxes) | VERIFIED |
+| PC-SETUP-PARAMS-046 | Inventory dimensions display selection | VERIFIED |
+| PC-SETUP-PARAMS-047 | Lean time units (Days/Hours/Minutes/Seconds) | VERIFIED |
 | PC-SETUP-PARAMS-048 | Lean manufacturing default parameters | UNKNOWN |
 
 ## 1.2 Production control parameters by site  — `skeleton-partial`

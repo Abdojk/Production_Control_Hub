@@ -2,6 +2,16 @@
 
 > **Version lock baseline:** D365 SCM 10.0.47 (build 10.0.2527)
 
+## v0.3 — 2026-05-31  (Mission 2 begins)
+- **Enriched the Production control parameters (`PARAMS`) form:** 49 of 50 controls taken to
+  **VERIFIED** with ON/OFF (or per-value) business effects, grounded in Tier-1 Microsoft sources
+  (parameters training unit #5; production-posting #3/#4; dispensing #9).
+- `PC-SETUP-PARAMS-048` (Lean manufacturing default parameters) left **UNKNOWN** — Microsoft does
+  not enumerate per-state effects on this page; "Insufficient data to verify".
+- **Verified-knowledge moved 0.0% → 25.8%** (49/190). This is the first real movement on the
+  knowledge axis; prior versions only grew the skeleton.
+- Full per-control records in `controls/setup/production-control-parameters.md`.
+
 ## v0.2 — 2026-05-31
 - **Mission 1 extended to all groups.** Enumerated Groups 2–5 to Level 4 (`skeleton-partial`):
   Common/Daily (6 forms, 31 controls), Journals (4 forms, 16), Inquiries and reports
