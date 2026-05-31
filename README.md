@@ -17,9 +17,10 @@ A persistent knowledge base that (1) maps the complete Production control module
 | `CHANGELOG.md` | Map versions, discovered controls, MS page revisions. |
 | `controls/<group>/<form>.md` | Per-form learning records (business-effect findings). |
 
-## Current state (v0.1)
-- **Mission 1 (skeleton):** Setup group enumerated to Level 4 — 16 forms, 123 controls (all UNKNOWN). Groups 2–5 at Level 3 (provisional, Level 4 deferred).
-- **Mission 2 (enrichment):** not started. Next: `PC-SETUP-PARAMS-004` (Ledger posting).
+## Current state (v0.2)
+- **Mission 1 (skeleton):** all 5 groups enumerated to Level 4 — **35 forms, 190 controls** (all UNKNOWN, all `skeleton-partial`). Operational/inquiry lists are partial by nature (Microsoft does not document every Action Pane button).
+- **Mission 2 (enrichment):** not started → **verified-knowledge = 0%**. The "80%" target is this metric. Next: `PC-SETUP-PARAMS-004` (Ledger posting).
+- **Note:** growing the skeleton is *not* the same as knowing the module; see COVERAGE_STATE.md for the two distinct metrics.
 
 ## Triggers
 - `How_much_do_You_know?` → coverage readout per group vs the map (no estimates).

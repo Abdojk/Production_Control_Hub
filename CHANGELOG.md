@@ -2,6 +2,20 @@
 
 > **Version lock baseline:** D365 SCM 10.0.47 (build 10.0.2527)
 
+## v0.2 — 2026-05-31
+- **Mission 1 extended to all groups.** Enumerated Groups 2–5 to Level 4 (`skeleton-partial`):
+  Common/Daily (6 forms, 31 controls), Journals (4 forms, 16), Inquiries and reports
+  (1 provisional bucket, 4), Periodic tasks (4 forms, 16). Module denominator now **190 controls**
+  across **35 forms**; all UNKNOWN.
+- Grounded in Tier-1 production-order lifecycle task guides, batch balancing, lean/kanban articles,
+  and the ProdBatchOrderHeaderEntity CDM entity (SOURCES.md #15–27).
+- **Discarded** Business Central search hits (different product); SCM/fin-ops only.
+- **Clarification recorded:** "≈80%" is a Mission 2 (verified-knowledge) target, not a Mission 1
+  (skeleton) measure. COVERAGE_STATE.md now separates *skeleton completeness* from
+  *verified-knowledge %*. Verified-knowledge remains **0%** — no enrichment performed.
+- Operational/inquiry Level-4 lists are partial: Microsoft does not document every Action Pane
+  button or report; full enumeration of those needs sandbox/AOT inspection.
+
 ## v0.1 — 2026-05-31
 - **Engine bootstrapped.** Created the knowledge directory per the standing instruction:
   KNOWLEDGE_MAP.md, COVERAGE_STATE.md, DEPENDENCIES.md, SOURCES.md, CHANGELOG.md, and

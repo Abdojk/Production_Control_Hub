@@ -1,9 +1,9 @@
 # KNOWLEDGE_MAP.md — D365 F&O Production Control Knowledge Map (Skeleton)
 
 > **Version lock:** Dynamics 365 Supply Chain Management **10.0.47** (build **10.0.2527**) — GA self-update March 2026 (latest GA as of 2026-05-31). 10.0.48 (build 10.0.2645) is not GA until June 2026.
-> **Map version:** v0.1
+> **Map version:** v0.2
 > **Last updated:** 2026-05-31
-> **Purpose:** This map is the *denominator* for all coverage maths. Levels 1–4 below. Every Level-4 control has a unique ID and a status. This session enumerates **Setup** to Level 4; all other groups are **Level 1–3 only (Level 4 deferred)**.
+> **Purpose:** This map is the *denominator* for all coverage maths. Levels 1–4 below. Every Level-4 control has a unique ID and a status. **All five groups are now enumerated to Level 4** (Setup `skeleton-partial`; Groups 2–5 operational/inquiry forms are `skeleton-partial` and partial by nature — Microsoft does not list every Action Pane button). Skeleton completeness is tracked in COVERAGE_STATE.md and is distinct from the verified-knowledge % (which is a Mission 2 measure and remains 0%).
 
 ## Status legend
 - `UNKNOWN` — not yet learned (business effect not yet recorded).
@@ -20,11 +20,11 @@
 **Production control** (Dynamics 365 Supply Chain Management)
 
 ## Level 2 — Menu groups (Microsoft navigation buckets)
-1. **Setup** — *enumerated to Level 4 this session*
-2. **Common / Daily** (Production orders, Batch orders, Kanban) — Level 3 provisional, Level 4 deferred
-3. **Journals** — Level 3 provisional, Level 4 deferred
-4. **Inquiries and reports** — Level 3 provisional, Level 4 deferred
-5. **Periodic tasks** — Level 3 provisional, Level 4 deferred
+1. **Setup** — Level 4 (16 forms, `skeleton-partial`)
+2. **Common / Daily** (Production orders, Batch orders, Kanban) — Level 4 (`skeleton-partial`)
+3. **Journals** — Level 4 (`skeleton-partial`)
+4. **Inquiries and reports** — Level 4 provisional (`skeleton-partial`)
+5. **Periodic tasks** — Level 4 (`skeleton-partial`)
 
 > Note: "Production control parameters" is a Setup form, not a separate Level-2 bucket; placed under Setup below.
 
@@ -260,34 +260,138 @@ Form code: `ROUTES-ROUTE`. Path: Production control > Setup > Routes > Routes (a
 
 ---
 
-# GROUP 2 — COMMON / DAILY  (Level 3 provisional — `skeleton-partial`, Level 4 deferred)
-| Form | Status |
-|---|---|
-| Production orders (All production orders) | Level 4 deferred |
-| Batch orders (All batch orders) | Level 4 deferred |
-| Kanban board for process jobs | Level 4 deferred |
-| Kanban board for transfer jobs | Level 4 deferred |
-| Kanban quantity calculations | Level 4 deferred |
-| Production floor execution (interface) | Level 4 deferred |
+# GROUP 2 — COMMON / DAILY (Level 4 — all forms `skeleton-partial`)
+> Operational forms; Microsoft documents the main Action Pane operations but not every button. Control lists are partial.
 
-# GROUP 3 — JOURNALS  (Level 3 provisional — `skeleton-partial`, Level 4 deferred)
-| Form | Status |
-|---|---|
-| Picking list | Level 4 deferred |
-| Route card | Level 4 deferred |
-| Job card | Level 4 deferred |
-| Report as finished | Level 4 deferred |
+## 2.1 All production orders (`PORD`) — Production control > Production orders > All production orders
+| ID | Control | Status |
+|---|---|---|
+| PC-COMMON-PORD-001 | New production order | UNKNOWN |
+| PC-COMMON-PORD-002 | Estimate | UNKNOWN |
+| PC-COMMON-PORD-003 | Schedule — Operations scheduling | UNKNOWN |
+| PC-COMMON-PORD-004 | Schedule — Job scheduling | UNKNOWN |
+| PC-COMMON-PORD-005 | Release (+ print Job card / Route job / Route card) | UNKNOWN |
+| PC-COMMON-PORD-006 | Start (From oper. no., Auto route/BOM consumption, Post now, Print picking list) | UNKNOWN |
+| PC-COMMON-PORD-007 | Report as finished (Good qty, Error qty, Error cause, End job, Accept error) | UNKNOWN |
+| PC-COMMON-PORD-008 | End (Date, Scrap method) | UNKNOWN |
+| PC-COMMON-PORD-009 | View > Picking list | UNKNOWN |
+| PC-COMMON-PORD-010 | View > Reported as finished | UNKNOWN |
+| PC-COMMON-PORD-011 | Manage costs > View cost comparison | UNKNOWN |
 
-# GROUP 4 — INQUIRIES AND REPORTS  (Level 3 provisional — `skeleton-partial`, Level 4 deferred)
-| Form | Status |
-|---|---|
-| Production order inquiries/reports (BOM, route, jobs, etc.) | Level 4 deferred |
+## 2.2 All batch orders (`BORD`) — Production control > Batch orders > All batch orders
+| ID | Control | Status |
+|---|---|---|
+| PC-COMMON-BORD-001 | New batch order | UNKNOWN |
+| PC-COMMON-BORD-002 | Estimate | UNKNOWN |
+| PC-COMMON-BORD-003 | Schedule | UNKNOWN |
+| PC-COMMON-BORD-004 | Release | UNKNOWN |
+| PC-COMMON-BORD-005 | Start | UNKNOWN |
+| PC-COMMON-BORD-006 | Report as finished / End | UNKNOWN |
 
-# GROUP 5 — PERIODIC TASKS  (Level 3 provisional — `skeleton-partial`, Level 4 deferred)
-| Form | Status |
-|---|---|
-| Update (schedule / release / start / report as finished / end) | Level 4 deferred |
-| Clean up | Level 4 deferred |
+## 2.3 Kanban board for process jobs (`KPROC`) — Production control > Kanban > Kanban board for process jobs
+| ID | Control | Status |
+|---|---|---|
+| PC-COMMON-KPROC-001 | Prioritize | UNKNOWN |
+| PC-COMMON-KPROC-002 | Pick | UNKNOWN |
+| PC-COMMON-KPROC-003 | Manufacture (report) | UNKNOWN |
+| PC-COMMON-KPROC-004 | Bar code scanning | UNKNOWN |
+
+## 2.4 Kanban board for transfer jobs (`KTRANS`) — Production control > Kanban > Kanban board for transfer jobs
+| ID | Control | Status |
+|---|---|---|
+| PC-COMMON-KTRANS-001 | Filters (Production flow / Activity / From-To warehouse-location) | UNKNOWN |
+| PC-COMMON-KTRANS-002 | Start | UNKNOWN |
+| PC-COMMON-KTRANS-003 | Complete | UNKNOWN |
+| PC-COMMON-KTRANS-004 | Job quantity (capped to kanban rule) | UNKNOWN |
+
+## 2.5 Kanban schedule board / Kanban job scheduling (`KSCHED`) — Production control > Kanban
+| ID | Control | Status |
+|---|---|---|
+| PC-COMMON-KSCHED-001 | Schedule unplanned job | UNKNOWN |
+| PC-COMMON-KSCHED-002 | Reschedule job to period | UNKNOWN |
+| PC-COMMON-KSCHED-003 | Change job status | UNKNOWN |
+
+## 2.6 Production floor execution interface — runtime (`PFE-RUN`)
+| ID | Control | Status |
+|---|---|---|
+| PC-COMMON-PFE-RUN-001 | Clock in / clock out | UNKNOWN |
+| PC-COMMON-PFE-RUN-002 | Start / stop job (job bundling) | UNKNOWN |
+| PC-COMMON-PFE-RUN-003 | Report feedback / report as finished | UNKNOWN |
+
+# GROUP 3 — JOURNALS (Level 4 — all forms `skeleton-partial`)
+## 3.1 Picking list (`J-PICK`)
+| ID | Control | Status |
+|---|---|---|
+| PC-JOURNALS-J-PICK-001 | Lines (item consumption) | UNKNOWN |
+| PC-JOURNALS-J-PICK-002 | Consumption quantity | UNKNOWN |
+| PC-JOURNALS-J-PICK-003 | Proposal (BOM) | UNKNOWN |
+| PC-JOURNALS-J-PICK-004 | Post | UNKNOWN |
+
+## 3.2 Route card (`J-ROUTE`)
+| ID | Control | Status |
+|---|---|---|
+| PC-JOURNALS-J-ROUTE-001 | Lines (operations) | UNKNOWN |
+| PC-JOURNALS-J-ROUTE-002 | Hours / Good qty / Error qty | UNKNOWN |
+| PC-JOURNALS-J-ROUTE-003 | Proposal | UNKNOWN |
+| PC-JOURNALS-J-ROUTE-004 | Post | UNKNOWN |
+
+## 3.3 Job card (`J-JOB`)
+| ID | Control | Status |
+|---|---|---|
+| PC-JOURNALS-J-JOB-001 | Lines (jobs) | UNKNOWN |
+| PC-JOURNALS-J-JOB-002 | Hours / Good qty / Error qty | UNKNOWN |
+| PC-JOURNALS-J-JOB-003 | Proposal | UNKNOWN |
+| PC-JOURNALS-J-JOB-004 | Post | UNKNOWN |
+
+## 3.4 Report as finished (`J-RAF`)
+| ID | Control | Status |
+|---|---|---|
+| PC-JOURNALS-J-RAF-001 | Lines (finished qty) | UNKNOWN |
+| PC-JOURNALS-J-RAF-002 | Good qty / Error qty / Error cause | UNKNOWN |
+| PC-JOURNALS-J-RAF-003 | End job | UNKNOWN |
+| PC-JOURNALS-J-RAF-004 | Post | UNKNOWN |
+
+# GROUP 4 — INQUIRIES AND REPORTS (Level 4 provisional — `skeleton-partial`)
+> Microsoft under-documents the SCM Production control report catalogue; this Level-4 list is provisional and will grow.
+| ID | Control | Status |
+|---|---|---|
+| PC-INQUIRY-RPT-001 | Production order list report (filters: period / location / status) | UNKNOWN |
+| PC-INQUIRY-RPT-002 | Price calculation inquiry | UNKNOWN |
+| PC-INQUIRY-RPT-003 | Cost comparison inquiry | UNKNOWN |
+| PC-INQUIRY-RPT-004 | Production journals inquiry | UNKNOWN |
+
+# GROUP 5 — PERIODIC TASKS (Level 4 — all forms `skeleton-partial`)
+## 5.1 Kanban quantity calculation (`KANBANCALC`) — Periodic tasks > Kanban quantity calculation > Calculate kanban quantity
+| ID | Control | Status |
+|---|---|---|
+| PC-PERIODIC-KANBANCALC-001 | Name / Policy | UNKNOWN |
+| PC-PERIODIC-KANBANCALC-002 | Rule active as of date | UNKNOWN |
+| PC-PERIODIC-KANBANCALC-003 | Fulfilled demand period (start/end) | UNKNOWN |
+| PC-PERIODIC-KANBANCALC-004 | Demand period (start/end) | UNKNOWN |
+| PC-PERIODIC-KANBANCALC-005 | Generate / Calculate / Update | UNKNOWN |
+
+## 5.2 Kanban rules (`KANBANRULES`) — reachable via Periodic tasks > Kanban quantity calculation > Kanban rules (primary home: PIM > Lean manufacturing)
+| ID | Control | Status |
+|---|---|---|
+| PC-PERIODIC-KANBANRULES-001 | Type (Manufacturing / Withdrawal) | UNKNOWN |
+| PC-PERIODIC-KANBANRULES-002 | Replenishment strategy (Fixed / Scheduled / Event) | UNKNOWN |
+| PC-PERIODIC-KANBANRULES-003 | Automatic planning quantity | UNKNOWN |
+
+## 5.3 Update — batch lifecycle (`UPDATE`)
+| ID | Control | Status |
+|---|---|---|
+| PC-PERIODIC-UPDATE-001 | Estimate (batch) | UNKNOWN |
+| PC-PERIODIC-UPDATE-002 | Schedule (batch) | UNKNOWN |
+| PC-PERIODIC-UPDATE-003 | Release (batch) | UNKNOWN |
+| PC-PERIODIC-UPDATE-004 | Start (batch) | UNKNOWN |
+| PC-PERIODIC-UPDATE-005 | Report as finished / End (batch) | UNKNOWN |
+
+## 5.4 Clean up (`CLEANUP`)
+| ID | Control | Status |
+|---|---|---|
+| PC-PERIODIC-CLEANUP-001 | Production journals cleanup | UNKNOWN |
+| PC-PERIODIC-CLEANUP-002 | Production orders cleanup / archive | UNKNOWN |
+| PC-PERIODIC-CLEANUP-003 | Calculation cleanup | UNKNOWN |
 
 ---
 
