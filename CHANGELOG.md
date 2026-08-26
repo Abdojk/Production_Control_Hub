@@ -2,6 +2,20 @@
 
 > **Version lock baseline:** D365 SCM 10.0.47 (build 10.0.2527)
 
+## v0.4 — 2026-05-31  (Mission 2 batch 2)
+- **Enriched 5 more Setup forms:** PARAMSITE (15/15 VERIFIED, site-scoped twins of PARAMS),
+  ROUTES-RG (7/7), MES-DEFAULTS (8/8), MES-PFE (24/24), JOURNALNAMES (4/10; 6 voucher/posting
+  fields left UNKNOWN pending a dedicated Tier-1 journal-name source).
+- **Skeleton refined during enrichment (map grew 190 → 210):**
+  - MES-DEFAULTS 6 → 8 controls (split into documented Start/Operations/RAF BOM-consumption + update fields).
+  - MES-PFE 6 → 24 controls (full documented set across General/Tab selection/Login/Main view/Report
+    progress FastTabs + Clean up action).
+  - ROUTES-RG-007 re-scoped from the unsourced "Automatic route consumption settings" stub to the
+    documented **Complete secondary operation with primary** route-group parameter.
+- **Verified-knowledge 25.8% → 51.0%** (49/190 → 107/210). Setup group now 107/143 verified.
+- Sources: production-parameters-manufacturing-execution (#6), production-floor-execution-configure (#8),
+  registration-manufacturing-execution (#7) — all fetched this session.
+
 ## v0.3 — 2026-05-31  (Mission 2 begins)
 - **Enriched the Production control parameters (`PARAMS`) form:** 49 of 50 controls taken to
   **VERIFIED** with ON/OFF (or per-value) business effects, grounded in Tier-1 Microsoft sources

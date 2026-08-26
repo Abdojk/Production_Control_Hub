@@ -19,4 +19,11 @@
 - `PC-SETUP-MES-DEFAULTS-001` (Skip time adjustments) — **requires** — Feature management *Skip time adjustments when calculating actual cost per production order* (10.0.41+); **affects** automatic route consumption for route groups using estimated time. | VERIFIED | Tier 1: registration-manufacturing-execution
 - `PC-SETUP-MES-PFE-001` (Clock in and out only) — **blocks** — most other MES-PFE options; **requires** Tab selection emptied first. | VERIFIED | Tier 1: production-floor-execution-configure
 
+## Added v0.4 (enrichment batch 2)
+- `PC-SETUP-MES-PFE-005` (Single worker) — **requires/forces** — `PC-SETUP-MES-PFE-003` (Lock employee) auto-set to Yes; also removes badge/personnel sign-in (needs a system user account linked to a time-registered worker). | VERIFIED | Tier 1: production-floor-execution-configure (#8)
+- `PC-SETUP-MES-PFE-021` (Generate license plate) — **requires** — a license-plate number sequence on the Warehouse management parameters page. | VERIFIED | #8
+- `PC-SETUP-MES-PFE-001` (Clock in and out only) — **requires** — Tab selection FastTab emptied before it can be enabled. | VERIFIED | #8
+- `PC-SETUP-ROUTES-RG-007` (Complete secondary operation with primary) — **requires** — feature *Auto-complete secondary operation with primary* (10.0.46+). | VERIFIED | #8
+- `PC-SETUP-MES-DEFAULTS-003/005/007` (Automatic BOM consumption Start/Operations/RAF) — **blocks** — must not overlap: *Always* on one stage requires *Never* on the others; *Flushing principle* on Start requires the same on Operations or RAF. Contradictory settings double-deduct or skip material. | VERIFIED | Tier 1: production-parameters-manufacturing-execution (#6)
+
 > Enrichment will expand this file control-by-control. Unconfirmed links must carry trust=LOW and the "sandbox-test before relying" flag.

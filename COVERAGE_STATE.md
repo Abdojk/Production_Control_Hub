@@ -1,77 +1,71 @@
 # COVERAGE_STATE.md — Numerator source for coverage maths
 
 > **Version lock:** D365 SCM 10.0.47 (build 10.0.2527)
-> **Map version tracked:** KNOWLEDGE_MAP.md v0.3
+> **Map version tracked:** KNOWLEDGE_MAP.md v0.4
 > **Last updated:** 2026-05-31
 > Every percentage in a `How_much_do_You_know?` readout must trace to the counts below. No estimates.
 >
 > **Two distinct metrics — do not conflate:**
-> - **Skeleton completeness (Mission 1):** how much of the map is enumerated. Growing this is *not* "knowing" the module.
-> - **Verified-knowledge % (Mission 2):** VERIFIED controls / total. This is the standing-instruction coverage metric and the basis of any "80%" target.
+> - **Skeleton completeness (Mission 1):** how much of the map is enumerated.
+> - **Verified-knowledge % (Mission 2):** VERIFIED controls / total. This is the "80%" target metric.
 
 ## Mission 1 — skeleton completeness
-- Groups enumerated to Level 4: **5 / 5** (all groups)
-- Forms enumerated: **35** (Setup 16, Common 6, Journals 4, Inquiries 1 bucket, Periodic 4)
-- Controls enumerated (denominator): **190**
-- All 35 forms flagged `skeleton-partial` — denominator is provisional and expected to grow during enrichment.
+- Groups enumerated to Level 4: **5 / 5**
+- Forms enumerated: **35**
+- Controls enumerated (denominator): **210** (grew from 190: MES-DEFAULTS 6→8, MES-PFE 6→24 during enrichment)
+- All forms remain `skeleton-partial` — denominator may still grow.
 
 ## Mission 2 — verified-knowledge (the "80%" target metric)
-- Verified: **49 / 190 = 25.8%**
-- Unconfirmed: **0 / 190 = 0.0%**
-- Unknown: **141 / 190 = 74.2%**
-- On a /100 scale: **X = 25.8 / 100** (49 controls verified).
+- Verified: **107 / 210 = 51.0%**
+- Unconfirmed: **0 / 210 = 0.0%**
+- Unknown: **103 / 210 = 49.0%**
+- On a /100 scale: **X = 51.0 / 100** (107 controls verified).
 
 ## Per-group tally
 
 | Group | Total controls | Verified | Unconfirmed | Unknown | Level-4? |
 |---|---|---|---|---|---|
-| 1. Setup | 123 | 49 | 0 | 74 | Yes |
+| 1. Setup | 143 | 107 | 0 | 36 | Yes |
 | 2. Common / Daily | 31 | 0 | 0 | 31 | Yes |
 | 3. Journals | 16 | 0 | 0 | 16 | Yes |
 | 4. Inquiries and reports | 4 | 0 | 0 | 4 | Yes (provisional) |
 | 5. Periodic tasks | 16 | 0 | 0 | 16 | Yes |
-| **Total** | **190** | **49** | **0** | **141** | |
+| **Total** | **210** | **107** | **0** | **103** | |
 
-## Setup group — per-form tally (denominator = 123)
+## Setup group — per-form tally (denominator = 143)
 
-| Form code | Form | Controls | Unknown |
-|---|---|---|---|
-| PARAMS | Production control parameters | 50 | 1 (49 VERIFIED) |
-| PARAMSITE | Production control parameters by site | 15 | 15 |
-| JOURNALNAMES | Production journal names | 10 | 10 |
-| POOLS | Production pools | 2 | 2 |
-| GROUPS | Production groups | 3 | 3 |
-| UNITS | Production units | 4 | 4 |
-| ALLOCKEYS | Allocation keys | 3 | 3 |
-| PROPS | Properties | 2 | 2 |
-| TRACKEDCOMP | Tracked components policy | 2 | 2 |
-| MES-DEFAULTS | Production order defaults | 6 | 6 |
-| MES-PFE | Configure production floor execution | 6 | 6 |
-| ROUTES-OPS | Operations | 3 | 3 |
-| ROUTES-RG | Route groups | 7 | 7 |
-| COSTCAT | Cost categories | 4 | 4 |
-| COSTGRP | Cost groups | 3 | 3 |
-| ROUTES-ROUTE | Routes / Route version | 3 | 3 |
+| Form code | Form | Controls | Verified | Unknown |
+|---|---|---|---|---|
+| PARAMS | Production control parameters | 50 | 49 | 1 |
+| PARAMSITE | Production control parameters by site | 15 | 15 | 0 |
+| JOURNALNAMES | Production journal names | 10 | 4 | 6 |
+| POOLS | Production pools | 2 | 0 | 2 |
+| GROUPS | Production groups | 3 | 0 | 3 |
+| UNITS | Production units | 4 | 0 | 4 |
+| ALLOCKEYS | Allocation keys | 3 | 0 | 3 |
+| PROPS | Properties | 2 | 0 | 2 |
+| TRACKEDCOMP | Tracked components policy | 2 | 0 | 2 |
+| MES-DEFAULTS | Production order defaults | 8 | 8 | 0 |
+| MES-PFE | Configure production floor execution | 24 | 24 | 0 |
+| ROUTES-OPS | Operations | 3 | 0 | 3 |
+| ROUTES-RG | Route groups | 7 | 7 | 0 |
+| COSTCAT | Cost categories | 4 | 0 | 4 |
+| COSTGRP | Cost groups | 3 | 0 | 3 |
+| ROUTES-ROUTE | Routes / Route version | 3 | 0 | 3 |
+| **Setup total** | | **143** | **107** | **36** |
 
-## Common / Journals / Inquiries / Periodic — per-form tally
+## Common / Journals / Inquiries / Periodic — per-form tally (all UNKNOWN)
 | Group | Form code | Controls |
 |---|---|---|
-| Common | PORD (All production orders) | 11 |
-| Common | BORD (All batch orders) | 6 |
-| Common | KPROC (Kanban board for process jobs) | 4 |
-| Common | KTRANS (Kanban board for transfer jobs) | 4 |
-| Common | KSCHED (Kanban schedule board) | 3 |
-| Common | PFE-RUN (Production floor execution runtime) | 3 |
-| Journals | J-PICK / J-ROUTE / J-JOB / J-RAF | 4 each = 16 |
-| Inquiries | RPT (provisional bucket) | 4 |
-| Periodic | KANBANCALC | 5 |
-| Periodic | KANBANRULES | 3 |
-| Periodic | UPDATE | 5 |
-| Periodic | CLEANUP | 3 |
+| Common | PORD / BORD / KPROC / KTRANS / KSCHED / PFE-RUN | 31 |
+| Journals | J-PICK / J-ROUTE / J-JOB / J-RAF | 16 |
+| Inquiries | RPT (provisional) | 4 |
+| Periodic | KANBANCALC / KANBANRULES / UPDATE / CLEANUP | 16 |
 
 ## Screens flagged `skeleton-partial`
-All 35 enumerated forms. Highest-value skeleton-completion candidates: PARAMS, PARAMSITE (Documents / Number sequences / full Status matrix tabs not yet enumerated); PORD (full Action Pane).
+All 35 enumerated forms. Note: PARAMS still has Documents / Number sequences / full Status matrix tabs unenumerated; JOURNALNAMES has 6 voucher/posting fields awaiting a Tier-1 source.
 
 ## Resume pointer
-- **Mission 1 (skeleton):** all 5 groups at Level 4 (`skeleton-partial`).
-- **Mission 2 (enrichment):** IN PROGRESS. PARAMS form done (49/50 VERIFIED; PARAMS-048 lean defaults left UNKNOWN). **Next batch:** `JOURNALNAMES` (10) + `ROUTES-RG` (7) + `MES-DEFAULTS` (6) + `MES-PFE` (6) — all have Tier-1 material already fetched this session.
+- **Mission 2 (enrichment):** IN PROGRESS — **X = 51.0/100 (107/210)**.
+- **Setup remaining (36 unknown):** JOURNALNAMES voucher fields (6), POOLS (2), GROUPS (3), UNITS (4), ALLOCKEYS (3), PROPS (2), TRACKEDCOMP (2), ROUTES-OPS (3), COSTCAT (4), COSTGRP (3), ROUTES-ROUTE (3), PARAMS-048 (1).
+- **Next batch options:** finish Setup group (→ ~68% module) via the small remaining forms + a journal-names source; or start Group 2 (Common) production-order lifecycle controls (strong Tier-1 task guides already fetched).
