@@ -1,10 +1,10 @@
 # KNOWLEDGE_MAP.md — D365 F&O Production Control Knowledge Map (Skeleton)
 
 > **Version lock:** Dynamics 365 Supply Chain Management **10.0.47** (build **10.0.2527**) — GA self-update March 2026 (latest GA as of 2026-05-31). 10.0.48 (build 10.0.2645) is not GA until June 2026.
-> **Map version:** v0.3
+> **Map version:** v0.4
 > **Last updated:** 2026-05-31
-> **Mission 2 progress:** PARAMS form enriched — 49/50 controls VERIFIED. Verified-knowledge = 49/190 = 25.8%.
-> **Purpose:** This map is the *denominator* for all coverage maths. Levels 1–4 below. Every Level-4 control has a unique ID and a status. **All five groups are now enumerated to Level 4** (Setup `skeleton-partial`; Groups 2–5 operational/inquiry forms are `skeleton-partial` and partial by nature — Microsoft does not list every Action Pane button). Skeleton completeness is tracked in COVERAGE_STATE.md and is distinct from the verified-knowledge % (which is a Mission 2 measure and remains 0%).
+> **Mission 2 progress:** Setup forms PARAMS (49/50), PARAMSITE (15/15), JOURNALNAMES (4/10), ROUTES-RG (7/7), MES-DEFAULTS (8/8), MES-PFE (24/24) enriched. Denominator grew to 210 (MES-DEFAULTS +2, MES-PFE +18). Verified-knowledge = 107/210 = 51.0%.
+> **Purpose:** This map is the *denominator* for all coverage maths. Levels 1–4 below. Every Level-4 control has a unique ID and a status. **All five groups are now enumerated to Level 4** (Setup `skeleton-partial`; Groups 2–5 operational/inquiry forms are `skeleton-partial` and partial by nature — Microsoft does not list every Action Pane button). Skeleton completeness is tracked in COVERAGE_STATE.md and is distinct from the verified-knowledge % (a Mission 2 measure, currently 51.0%).
 
 ## Status legend
 - `UNKNOWN` — not yet learned (business effect not yet recorded).
@@ -112,36 +112,36 @@ Form code: `PARAMSITE`. Path: Production control > Setup > Production control pa
 > Mirrors site-applicable subset of PARAMS (controls flagged "can also apply to sites"). Effective only when PARAMS Parameter usage = By site.
 | ID | Control | Status |
 |---|---|---|
-| PC-SETUP-PARAMSITE-001 | Site selector | UNKNOWN |
-| PC-SETUP-PARAMSITE-002 | Maximum job lead time (site) | UNKNOWN |
-| PC-SETUP-PARAMSITE-003 | Post picking list in ledger (site) | UNKNOWN |
-| PC-SETUP-PARAMSITE-004 | Post report as finished in ledger (site) | UNKNOWN |
-| PC-SETUP-PARAMSITE-005 | Post excl. transaction type (site) | UNKNOWN |
-| PC-SETUP-PARAMSITE-006 | Planned order (site) | UNKNOWN |
-| PC-SETUP-PARAMSITE-007 | Project (site) | UNKNOWN |
-| PC-SETUP-PARAMSITE-008 | Limited work center search (site) | UNKNOWN |
-| PC-SETUP-PARAMSITE-009 | Price calculation (site) | UNKNOWN |
-| PC-SETUP-PARAMSITE-010 | Delete capacity reservations (site) | UNKNOWN |
-| PC-SETUP-PARAMSITE-011 | Use estimated cost price (site) | UNKNOWN |
-| PC-SETUP-PARAMSITE-012 | Default journal — Picking list (site) | UNKNOWN |
-| PC-SETUP-PARAMSITE-013 | Default journal — Route card (site) | UNKNOWN |
-| PC-SETUP-PARAMSITE-014 | Default journal — Job card (site) | UNKNOWN |
-| PC-SETUP-PARAMSITE-015 | Default journal — Report as finished (site) | UNKNOWN |
+| PC-SETUP-PARAMSITE-001 | Site selector | VERIFIED |
+| PC-SETUP-PARAMSITE-002 | Maximum job lead time (site) | VERIFIED |
+| PC-SETUP-PARAMSITE-003 | Post picking list in ledger (site) | VERIFIED |
+| PC-SETUP-PARAMSITE-004 | Post report as finished in ledger (site) | VERIFIED |
+| PC-SETUP-PARAMSITE-005 | Post excl. transaction type (site) | VERIFIED |
+| PC-SETUP-PARAMSITE-006 | Planned order (site) | VERIFIED |
+| PC-SETUP-PARAMSITE-007 | Project (site) | VERIFIED |
+| PC-SETUP-PARAMSITE-008 | Limited work center search (site) | VERIFIED |
+| PC-SETUP-PARAMSITE-009 | Price calculation (site) | VERIFIED |
+| PC-SETUP-PARAMSITE-010 | Delete capacity reservations (site) | VERIFIED |
+| PC-SETUP-PARAMSITE-011 | Use estimated cost price (site) | VERIFIED |
+| PC-SETUP-PARAMSITE-012 | Default journal — Picking list (site) | VERIFIED |
+| PC-SETUP-PARAMSITE-013 | Default journal — Route card (site) | VERIFIED |
+| PC-SETUP-PARAMSITE-014 | Default journal — Job card (site) | VERIFIED |
+| PC-SETUP-PARAMSITE-015 | Default journal — Report as finished (site) | VERIFIED |
 
 ## 1.3 Production journal names  — `skeleton-partial`
 Form code: `JOURNALNAMES`. Path: Production control > Setup > Production journal names.
 | ID | Control | Status |
 |---|---|---|
-| PC-SETUP-JOURNALNAMES-001 | Journal name (Name) | UNKNOWN |
-| PC-SETUP-JOURNALNAMES-002 | Description | UNKNOWN |
-| PC-SETUP-JOURNALNAMES-003 | Journal type | UNKNOWN |
+| PC-SETUP-JOURNALNAMES-001 | Journal name (Name) | VERIFIED |
+| PC-SETUP-JOURNALNAMES-002 | Description | VERIFIED |
+| PC-SETUP-JOURNALNAMES-003 | Journal type | VERIFIED |
 | PC-SETUP-JOURNALNAMES-004 | Default private user group | UNKNOWN |
 | PC-SETUP-JOURNALNAMES-005 | Delete lines after posting | UNKNOWN |
 | PC-SETUP-JOURNALNAMES-006 | Default posting summation level | UNKNOWN |
 | PC-SETUP-JOURNALNAMES-007 | Voucher number allocation rule | UNKNOWN |
 | PC-SETUP-JOURNALNAMES-008 | Voucher number selection rule | UNKNOWN |
 | PC-SETUP-JOURNALNAMES-009 | Voucher series / number sequence code | UNKNOWN |
-| PC-SETUP-JOURNALNAMES-010 | Dispensing tickets (toggle) | UNKNOWN |
+| PC-SETUP-JOURNALNAMES-010 | Dispensing tickets (toggle) | VERIFIED |
 
 ## 1.4 Production pools  — `skeleton-partial`
 Form code: `POOLS`. Path: Production control > Setup > Production pools.
@@ -191,26 +191,47 @@ Form code: `TRACKEDCOMP`. Path: Production control > Setup > Production > Tracke
 
 ## 1.10 Manufacturing execution — Production order defaults  — `skeleton-partial`
 Form code: `MES-DEFAULTS`. Path: Production control > Setup > Manufacturing execution > Production order defaults.
-> Tabs: General, Start, Operations, Report as finished, Quantity validation.
+> Tabs: General, Start, Operations, Report as finished, Quantity validation. Refined to documented fields (v0.4).
 | ID | Control | Status |
 |---|---|---|
-| PC-SETUP-MES-DEFAULTS-001 | Skip time adjustments (General) | UNKNOWN |
-| PC-SETUP-MES-DEFAULTS-002 | General job parameter settings (group) | UNKNOWN |
-| PC-SETUP-MES-DEFAULTS-003 | Start parameters (Start tab) | UNKNOWN |
-| PC-SETUP-MES-DEFAULTS-004 | Job types requiring registration (Operations tab) | UNKNOWN |
-| PC-SETUP-MES-DEFAULTS-005 | Report as finished parameters | UNKNOWN |
-| PC-SETUP-MES-DEFAULTS-006 | Quantity validation parameters | UNKNOWN |
+| PC-SETUP-MES-DEFAULTS-001 | Skip time adjustments (General) | VERIFIED |
+| PC-SETUP-MES-DEFAULTS-002 | Update start on-line (Start) | VERIFIED |
+| PC-SETUP-MES-DEFAULTS-003 | Automatic BOM consumption — Start | VERIFIED |
+| PC-SETUP-MES-DEFAULTS-004 | Job types requiring registration (Operations) | VERIFIED |
+| PC-SETUP-MES-DEFAULTS-005 | Automatic BOM consumption — Operations | VERIFIED |
+| PC-SETUP-MES-DEFAULTS-006 | Update finished report on-line (Report as finished) | VERIFIED |
+| PC-SETUP-MES-DEFAULTS-007 | Automatic BOM consumption — Report as finished | VERIFIED |
+| PC-SETUP-MES-DEFAULTS-008 | Quantity validation parameters | VERIFIED |
 
 ## 1.11 Manufacturing execution — Configure production floor execution  — `skeleton-partial`
 Form code: `MES-PFE`. Path: Production control > Setup > Manufacturing execution > Configure production floor execution.
+> Expanded v0.4 from 6 → 24 controls (5 FastTabs + 1 action) after enrichment surfaced the full documented control set.
 | ID | Control | Status |
 |---|---|---|
-| PC-SETUP-MES-PFE-001 | Clock in and out only | UNKNOWN |
-| PC-SETUP-MES-PFE-002 | Report quantity at clock-out | UNKNOWN |
-| PC-SETUP-MES-PFE-003 | Lock employee | UNKNOWN |
-| PC-SETUP-MES-PFE-004 | Use the actual time of registration | UNKNOWN |
-| PC-SETUP-MES-PFE-005 | Single worker | UNKNOWN |
-| PC-SETUP-MES-PFE-006 | Tab selection (interface design) | UNKNOWN |
+| PC-SETUP-MES-PFE-001 | Clock in and out only (General) | VERIFIED |
+| PC-SETUP-MES-PFE-002 | Report quantity at clock-out (General) | VERIFIED |
+| PC-SETUP-MES-PFE-003 | Lock employee (General) | VERIFIED |
+| PC-SETUP-MES-PFE-004 | Use the actual time of registration (General) | VERIFIED |
+| PC-SETUP-MES-PFE-005 | Single worker (General) | VERIFIED |
+| PC-SETUP-MES-PFE-007 | Suppress numpad keyboard (General) | VERIFIED |
+| PC-SETUP-MES-PFE-006 | Tab selection | VERIFIED |
+| PC-SETUP-MES-PFE-008 | Enable numpad (Login) | VERIFIED |
+| PC-SETUP-MES-PFE-009 | Allow locking the touchscreen (Login) | VERIFIED |
+| PC-SETUP-MES-PFE-010 | Screen lock duration (Login) | VERIFIED |
+| PC-SETUP-MES-PFE-011 | Enable search (Main view) | VERIFIED |
+| PC-SETUP-MES-PFE-012 | Enable search by project ID (Main view) | VERIFIED |
+| PC-SETUP-MES-PFE-013 | Auto-open start dialog (Main view) | VERIFIED |
+| PC-SETUP-MES-PFE-014 | Auto-open report progress dialog (Main view) | VERIFIED |
+| PC-SETUP-MES-PFE-015 | Skip product selection (Report progress) | VERIFIED |
+| PC-SETUP-MES-PFE-016 | View materials (Report progress) | VERIFIED |
+| PC-SETUP-MES-PFE-017 | Enable adjust material (Report progress) | VERIFIED |
+| PC-SETUP-MES-PFE-018 | Default remaining quantity (Report progress) | VERIFIED |
+| PC-SETUP-MES-PFE-019 | Default nominal quantity (Report progress) | VERIFIED |
+| PC-SETUP-MES-PFE-020 | Require existing license plate (Report progress) | VERIFIED |
+| PC-SETUP-MES-PFE-021 | Generate license plate (Report progress) | VERIFIED |
+| PC-SETUP-MES-PFE-022 | Print label (Report progress) | VERIFIED |
+| PC-SETUP-MES-PFE-023 | Add material line (Report progress) | VERIFIED |
+| PC-SETUP-MES-PFE-024 | Clean up client configurations (action) | VERIFIED |
 
 ## 1.12 Routes — Operations  — `skeleton-partial`
 Form code: `ROUTES-OPS`. Path: Production control > Setup > Routes > Operations.
@@ -224,13 +245,13 @@ Form code: `ROUTES-OPS`. Path: Production control > Setup > Routes > Operations.
 Form code: `ROUTES-RG`. Path: Production control > Setup > Routes > Route groups.
 | ID | Control | Status |
 |---|---|---|
-| PC-SETUP-ROUTES-RG-001 | Route group (id) | UNKNOWN |
-| PC-SETUP-ROUTES-RG-002 | Name | UNKNOWN |
-| PC-SETUP-ROUTES-RG-003 | Setup time (Estimation and costing) | UNKNOWN |
-| PC-SETUP-ROUTES-RG-004 | Run time (Estimation and costing) | UNKNOWN |
-| PC-SETUP-ROUTES-RG-005 | Quantity (Estimation and costing) | UNKNOWN |
-| PC-SETUP-ROUTES-RG-006 | Job management (per job type) | UNKNOWN |
-| PC-SETUP-ROUTES-RG-007 | Automatic route consumption settings | UNKNOWN |
+| PC-SETUP-ROUTES-RG-001 | Route group (id) | VERIFIED |
+| PC-SETUP-ROUTES-RG-002 | Name | VERIFIED |
+| PC-SETUP-ROUTES-RG-003 | Setup time (Estimation and costing) | VERIFIED |
+| PC-SETUP-ROUTES-RG-004 | Run time (Estimation and costing) | VERIFIED |
+| PC-SETUP-ROUTES-RG-005 | Quantity (Estimation and costing) | VERIFIED |
+| PC-SETUP-ROUTES-RG-006 | Job management (per job type) | VERIFIED |
+| PC-SETUP-ROUTES-RG-007 | Complete secondary operation with primary | VERIFIED |
 
 ## 1.14 Cost categories  — `skeleton-partial`
 Form code: `COSTCAT`. Path: Production control > Setup > Routes > Cost categories.
@@ -257,7 +278,7 @@ Form code: `ROUTES-ROUTE`. Path: Production control > Setup > Routes > Routes (a
 | PC-SETUP-ROUTES-ROUTE-002 | Route version | UNKNOWN |
 | PC-SETUP-ROUTES-ROUTE-003 | Approve / Activate | UNKNOWN |
 
-**Setup group control count: 123** (see COVERAGE_STATE.md for the authoritative tally).
+**Setup group control count: 143** (see COVERAGE_STATE.md for the authoritative tally). *(v0.4: MES-DEFAULTS 6→8, MES-PFE 6→24.)*
 
 ---
 
