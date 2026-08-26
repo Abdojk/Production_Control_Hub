@@ -32,6 +32,10 @@
 | 25 | 1 | Calculate kanban quantity suggestions | https://learn.microsoft.com/dynamics365/supply-chain/production-control/tasks/calculate-kanban-quantity-suggestions | 2026-05-31 |
 | 26 | 1 | Create a BOM line event kanban rule | https://learn.microsoft.com/dynamics365/supply-chain/production-control/tasks/create-bom-line-event-kanban-rule | 2026-05-31 |
 | 27 | 1 | ProdBatchOrderHeaderEntity (CDM entity attributes) | https://learn.microsoft.com/common-data-model/schema/core/operationscommon/entities/supplychain/productioncontrol/prodbatchorderheaderentity | 2026-05-31 |
+| 28 | 1 | Operations resources (production units, resource groups) | https://learn.microsoft.com/dynamics365/supply-chain/production-control/operations-resources | 2026-05-31 |
+| 29 | 1 | Allocation keys (bundle type) — training unit | https://learn.microsoft.com/training/modules/set-up-use-production-control-discrete-manufacturing/allocation-keys | 2026-05-31 |
+| 30 | 1 | One voucher (Journal names — New voucher field) | https://learn.microsoft.com/dynamics365/finance/general-ledger/one-voucher | 2026-05-31 |
+| 31 | 1 | General journal processing / voucher number sequences | https://learn.microsoft.com/dynamics365/finance/general-ledger/general-journal-processing | 2026-05-31 |
 
 > No Tier-2 or Tier-3 sources used yet; the skeleton is built entirely from Tier-1 authority. Tier-2/3 sources will be added when Mission 2 enrichment needs business-effect detail Microsoft omits.
 > **Discarded:** several search results were Dynamics 365 **Business Central** manufacturing pages (a different product) — not used; SCM/fin-ops sources only.

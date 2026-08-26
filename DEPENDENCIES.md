@@ -26,4 +26,10 @@
 - `PC-SETUP-ROUTES-RG-007` (Complete secondary operation with primary) — **requires** — feature *Auto-complete secondary operation with primary* (10.0.46+). | VERIFIED | #8
 - `PC-SETUP-MES-DEFAULTS-003/005/007` (Automatic BOM consumption Start/Operations/RAF) — **blocks** — must not overlap: *Always* on one stage requires *Never* on the others; *Flushing principle* on Start requires the same on Operations or RAF. Contradictory settings double-deduct or skip material. | VERIFIED | Tier 1: production-parameters-manufacturing-execution (#6)
 
+## Added v0.5 (enrichment batch 3 — Setup complete)
+- `PC-SETUP-PARAMS-042` (Finite property scheduling) — **requires** — `PC-SETUP-PROPS-*` (Properties) defined and assigned to resources via the working time template. | VERIFIED | Tier 1: production-set-up-requirements (#1)
+- `PC-SETUP-ALLOCKEYS-003` (Bundle type) — **affects** — how bundled job-registration time is allocated to individual jobs (Estimation/Jobs/Net time/Real time); scoped by Site/Production unit/Resource/Resource type. | VERIFIED | Tier 1: allocation-keys (#29)
+- `PC-SETUP-UNITS-003/004` (Production unit site/warehouse) — **affects** — used only to consolidate/filter production data; **no transactional effect**; changes apply to new orders after master scheduling only. | VERIFIED | Tier 1: operations-resources (#28)
+- `PC-SETUP-COSTGRP-003` (Cost group ↔ profit setting) — **requires** — used by `PC-SETUP-PARAMS-002` (Profit setting) to derive sales price from consumption. | VERIFIED | Tier 1: production-control-parameters (#5)
+
 > Enrichment will expand this file control-by-control. Unconfirmed links must carry trust=LOW and the "sandbox-test before relying" flag.

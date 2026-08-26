@@ -2,6 +2,18 @@
 
 > **Version lock baseline:** D365 SCM 10.0.47 (build 10.0.2527)
 
+## v0.5 — 2026-05-31  (Mission 2 batch 3 — Setup group COMPLETE)
+- **Enriched the remaining Setup forms — 31 controls to VERIFIED:** GROUPS (3), POOLS (2),
+  UNITS (4), ALLOCKEYS (3), PROPS (2), TRACKEDCOMP (2), ROUTES-OPS (3), COSTCAT (4), COSTGRP (3),
+  ROUTES-ROUTE (3), JOURNALNAMES +2 (008 New voucher, 009 Voucher series).
+- `ALLOCKEYS-003` re-scoped from the unsourced "Period allocation lines" stub to the documented
+  **Bundle type** (Estimation / Jobs / Net time / Real time) — allocation keys govern how bundled
+  job-registration time is split across jobs.
+- **Setup group is now COMPLETE:** 138/143 VERIFIED. 5 controls left honestly UNKNOWN (no Tier-1
+  source): PARAMS-048 (lean defaults) and JOURNALNAMES-004/005/006/007 (voucher/posting fields).
+- **Verified-knowledge 51.0% → 65.7%** (107/210 → 138/210).
+- New sources #28–31 (operations-resources, allocation-keys, one-voucher, general-journal-processing).
+
 ## v0.4 — 2026-05-31  (Mission 2 batch 2)
 - **Enriched 5 more Setup forms:** PARAMSITE (15/15 VERIFIED, site-scoped twins of PARAMS),
   ROUTES-RG (7/7), MES-DEFAULTS (8/8), MES-PFE (24/24), JOURNALNAMES (4/10; 6 voucher/posting
