@@ -1,10 +1,10 @@
 # KNOWLEDGE_MAP.md — D365 F&O Production Control Knowledge Map (Skeleton)
 
 > **Version lock:** Dynamics 365 Supply Chain Management **10.0.47** (build **10.0.2527**) — GA self-update March 2026 (latest GA as of 2026-05-31). 10.0.48 (build 10.0.2645) is not GA until June 2026.
-> **Map version:** v0.4
+> **Map version:** v0.5
 > **Last updated:** 2026-05-31
-> **Mission 2 progress:** Setup forms PARAMS (49/50), PARAMSITE (15/15), JOURNALNAMES (4/10), ROUTES-RG (7/7), MES-DEFAULTS (8/8), MES-PFE (24/24) enriched. Denominator grew to 210 (MES-DEFAULTS +2, MES-PFE +18). Verified-knowledge = 107/210 = 51.0%.
-> **Purpose:** This map is the *denominator* for all coverage maths. Levels 1–4 below. Every Level-4 control has a unique ID and a status. **All five groups are now enumerated to Level 4** (Setup `skeleton-partial`; Groups 2–5 operational/inquiry forms are `skeleton-partial` and partial by nature — Microsoft does not list every Action Pane button). Skeleton completeness is tracked in COVERAGE_STATE.md and is distinct from the verified-knowledge % (a Mission 2 measure, currently 51.0%).
+> **Mission 2 progress:** **Setup group COMPLETE** — 138/143 controls VERIFIED; 5 left honestly UNKNOWN (PARAMS-048 lean defaults; JOURNALNAMES-004/005/006/007 voucher/posting fields). Groups 2–5 not yet enriched. Verified-knowledge = 138/210 = 65.7%.
+> **Purpose:** This map is the *denominator* for all coverage maths. Levels 1–4 below. Every Level-4 control has a unique ID and a status. **All five groups are now enumerated to Level 4** (Setup `skeleton-partial`; Groups 2–5 operational/inquiry forms are `skeleton-partial` and partial by nature — Microsoft does not list every Action Pane button). Skeleton completeness is tracked in COVERAGE_STATE.md and is distinct from the verified-knowledge % (a Mission 2 measure, currently 65.7%).
 
 ## Status legend
 - `UNKNOWN` — not yet learned (business effect not yet recorded).
@@ -139,55 +139,55 @@ Form code: `JOURNALNAMES`. Path: Production control > Setup > Production journal
 | PC-SETUP-JOURNALNAMES-005 | Delete lines after posting | UNKNOWN |
 | PC-SETUP-JOURNALNAMES-006 | Default posting summation level | UNKNOWN |
 | PC-SETUP-JOURNALNAMES-007 | Voucher number allocation rule | UNKNOWN |
-| PC-SETUP-JOURNALNAMES-008 | Voucher number selection rule | UNKNOWN |
-| PC-SETUP-JOURNALNAMES-009 | Voucher series / number sequence code | UNKNOWN |
+| PC-SETUP-JOURNALNAMES-008 | Voucher number selection rule (New voucher) | VERIFIED |
+| PC-SETUP-JOURNALNAMES-009 | Voucher series / number sequence code | VERIFIED |
 | PC-SETUP-JOURNALNAMES-010 | Dispensing tickets (toggle) | VERIFIED |
 
 ## 1.4 Production pools  — `skeleton-partial`
 Form code: `POOLS`. Path: Production control > Setup > Production pools.
 | ID | Control | Status |
 |---|---|---|
-| PC-SETUP-POOLS-001 | Production pool (id) | UNKNOWN |
-| PC-SETUP-POOLS-002 | Name / Description | UNKNOWN |
+| PC-SETUP-POOLS-001 | Production pool (id) | VERIFIED |
+| PC-SETUP-POOLS-002 | Name / Description | VERIFIED |
 
 ## 1.5 Production groups  — `skeleton-partial`
 Form code: `GROUPS`. Path: Production control > Setup > Production groups.
 | ID | Control | Status |
 |---|---|---|
-| PC-SETUP-GROUPS-001 | Production group (id) | UNKNOWN |
-| PC-SETUP-GROUPS-002 | Name / Description | UNKNOWN |
-| PC-SETUP-GROUPS-003 | Ledger - items / ledger posting accounts | UNKNOWN |
+| PC-SETUP-GROUPS-001 | Production group (id) | VERIFIED |
+| PC-SETUP-GROUPS-002 | Name / Description | VERIFIED |
+| PC-SETUP-GROUPS-003 | Ledger - items / ledger posting accounts | VERIFIED |
 
 ## 1.6 Production units  — `skeleton-partial`
 Form code: `UNITS`. Path: Production control > Setup > Production units.
 | ID | Control | Status |
 |---|---|---|
-| PC-SETUP-UNITS-001 | Production unit (id) | UNKNOWN |
-| PC-SETUP-UNITS-002 | Name | UNKNOWN |
-| PC-SETUP-UNITS-003 | Site | UNKNOWN |
-| PC-SETUP-UNITS-004 | Resource group / warehouse association | UNKNOWN |
+| PC-SETUP-UNITS-001 | Production unit (id) | VERIFIED |
+| PC-SETUP-UNITS-002 | Name | VERIFIED |
+| PC-SETUP-UNITS-003 | Site | VERIFIED |
+| PC-SETUP-UNITS-004 | Picking / storage warehouse (+ resource-group membership) | VERIFIED |
 
 ## 1.7 Allocation keys  — `skeleton-partial`
 Form code: `ALLOCKEYS`. Path: Production control > Setup > Allocation keys.
 | ID | Control | Status |
 |---|---|---|
-| PC-SETUP-ALLOCKEYS-001 | Allocation key (id) | UNKNOWN |
-| PC-SETUP-ALLOCKEYS-002 | Description | UNKNOWN |
-| PC-SETUP-ALLOCKEYS-003 | Period allocation lines | UNKNOWN |
+| PC-SETUP-ALLOCKEYS-001 | Allocation key (id) | VERIFIED |
+| PC-SETUP-ALLOCKEYS-002 | Description | VERIFIED |
+| PC-SETUP-ALLOCKEYS-003 | Bundle type (Estimation / Jobs / Net time / Real time) | VERIFIED |
 
 ## 1.8 Properties  — `skeleton-partial`
 Form code: `PROPS`. Path: Production control > Setup > Properties.
 | ID | Control | Status |
 |---|---|---|
-| PC-SETUP-PROPS-001 | Property (id) | UNKNOWN |
-| PC-SETUP-PROPS-002 | Description | UNKNOWN |
+| PC-SETUP-PROPS-001 | Property (id) | VERIFIED |
+| PC-SETUP-PROPS-002 | Description | VERIFIED |
 
 ## 1.9 Tracked components policy  — `skeleton-partial`
 Form code: `TRACKEDCOMP`. Path: Production control > Setup > Production > Tracked components policy.
 | ID | Control | Status |
 |---|---|---|
-| PC-SETUP-TRACKEDCOMP-001 | Policy name | UNKNOWN |
-| PC-SETUP-TRACKEDCOMP-002 | Use tracked components (toggle) | UNKNOWN |
+| PC-SETUP-TRACKEDCOMP-001 | Policy name | VERIFIED |
+| PC-SETUP-TRACKEDCOMP-002 | Use tracked components (toggle) | VERIFIED |
 
 ## 1.10 Manufacturing execution — Production order defaults  — `skeleton-partial`
 Form code: `MES-DEFAULTS`. Path: Production control > Setup > Manufacturing execution > Production order defaults.
@@ -237,9 +237,9 @@ Form code: `MES-PFE`. Path: Production control > Setup > Manufacturing execution
 Form code: `ROUTES-OPS`. Path: Production control > Setup > Routes > Operations.
 | ID | Control | Status |
 |---|---|---|
-| PC-SETUP-ROUTES-OPS-001 | Operation (id) | UNKNOWN |
-| PC-SETUP-ROUTES-OPS-002 | Name | UNKNOWN |
-| PC-SETUP-ROUTES-OPS-003 | Relations (operation relations) | UNKNOWN |
+| PC-SETUP-ROUTES-OPS-001 | Operation (id) | VERIFIED |
+| PC-SETUP-ROUTES-OPS-002 | Name | VERIFIED |
+| PC-SETUP-ROUTES-OPS-003 | Relations (operation relations) | VERIFIED |
 
 ## 1.13 Routes — Route groups  — `skeleton-partial`
 Form code: `ROUTES-RG`. Path: Production control > Setup > Routes > Route groups.
@@ -257,26 +257,26 @@ Form code: `ROUTES-RG`. Path: Production control > Setup > Routes > Route groups
 Form code: `COSTCAT`. Path: Production control > Setup > Routes > Cost categories.
 | ID | Control | Status |
 |---|---|---|
-| PC-SETUP-COSTCAT-001 | Cost category (id) | UNKNOWN |
-| PC-SETUP-COSTCAT-002 | Cost group | UNKNOWN |
-| PC-SETUP-COSTCAT-003 | Cost price (per hour) | UNKNOWN |
-| PC-SETUP-COSTCAT-004 | Category type (Setup / Run / Quantity) | UNKNOWN |
+| PC-SETUP-COSTCAT-001 | Cost category (id) | VERIFIED |
+| PC-SETUP-COSTCAT-002 | Cost group | VERIFIED |
+| PC-SETUP-COSTCAT-003 | Cost price (per hour) | VERIFIED |
+| PC-SETUP-COSTCAT-004 | Category type (Setup / Run / Quantity) | VERIFIED |
 
 ## 1.15 Cost groups  — `skeleton-partial`
 Form code: `COSTGRP`. Path: Production control > Setup > Routes > Cost groups (shared with Cost management).
 | ID | Control | Status |
 |---|---|---|
-| PC-SETUP-COSTGRP-001 | Cost group (id) | UNKNOWN |
-| PC-SETUP-COSTGRP-002 | Cost group type | UNKNOWN |
-| PC-SETUP-COSTGRP-003 | Profit setting association | UNKNOWN |
+| PC-SETUP-COSTGRP-001 | Cost group (id) | VERIFIED |
+| PC-SETUP-COSTGRP-002 | Cost group type | VERIFIED |
+| PC-SETUP-COSTGRP-003 | Profit setting association | VERIFIED |
 
 ## 1.16 Routes — Routes / Route version  — `skeleton-partial`
 Form code: `ROUTES-ROUTE`. Path: Production control > Setup > Routes > Routes (and Route versions).
 | ID | Control | Status |
 |---|---|---|
-| PC-SETUP-ROUTES-ROUTE-001 | Route number | UNKNOWN |
-| PC-SETUP-ROUTES-ROUTE-002 | Route version | UNKNOWN |
-| PC-SETUP-ROUTES-ROUTE-003 | Approve / Activate | UNKNOWN |
+| PC-SETUP-ROUTES-ROUTE-001 | Route number | VERIFIED |
+| PC-SETUP-ROUTES-ROUTE-002 | Route version | VERIFIED |
+| PC-SETUP-ROUTES-ROUTE-003 | Approve / Activate | VERIFIED |
 
 **Setup group control count: 143** (see COVERAGE_STATE.md for the authoritative tally). *(v0.4: MES-DEFAULTS 6→8, MES-PFE 6→24.)*
 
